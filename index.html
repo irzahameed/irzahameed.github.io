@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Irza Hameed — Portfolio | Designer & Developer</title>
+
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fefcff;
+      font-family: 'Poppins', sans-serif;
+      color: #1e2a32;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 24px 40px;
+    }
+
+    /* Sticky header glassmorphism */
+    .navbar {
+      position: sticky;
+      top: 20px;
+      z-index: 100;
+      background: rgba(255, 248, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 60px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.02);
+      border: 1px solid rgba(129, 112, 196, 0.15);
+      margin-bottom: 32px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(145deg, #fff, #efe6ff);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 20px;
+      color: #6f5bc7;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .logo-text h4 {
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .logo-text p {
+      font-size: 0.75rem;
+      color: #5a4a7c;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2b3b44;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #8170c4;
+    }
+
+    /* hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      margin: 40px 0 30px;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .badge {
+      background: #f0ebff;
+      color: #6f5bc7;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .highlight {
+      color: #8170c4;
+    }
+
+    .hero-tagline {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #3a4d5e;
+      margin-bottom: 18px;
+    }
+
+    .hero-desc {
+      color: #4a5b6b;
+      max-width: 540px;
+      margin-bottom: 24px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    .btn-primary {
+      background: #8170c4;
+      color: white;
+      border: 1px solid #9b89db;
+    }
+
+    .btn-primary:hover {
+      background: #6a57b1;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid #cdc6e8;
+      background: white;
+      color: #2e3e4a;
+    }
+
+    .btn-outline:hover {
+      border-color: #8170c4;
+      background: #faf7ff;
+    }
+
+    .avatar-circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #e3d9ff;
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .avatar-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* section */
+    .section {
+      margin: 80px 0 60px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .section-header h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      border-left: 5px solid #8170c4;
+      padding-left: 18px;
+    }
+
+    .section-sub {
+      color: #6f7e8c;
+      font-size: 0.9rem;
+    }
+
+    /* skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: #f9f6ff;
+      border-radius: 24px;
+      padding: 18px 12px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      transition: all 0.2s;
+      border: 1px solid #ede6ff;
+    }
+
+    .skill-card strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: #4c3b79;
+    }
+
+    /* PROJECTS grid - GITHUB STYLE */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    .project-card {
+      background: #ffffff;
+      border-radius: 28px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+      border: 1px solid #f0eaff;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 40px rgba(104, 85, 165, 0.08);
+      border-color: #d9ceff;
+    }
+
+    .project-content {
+      padding: 22px 20px 24px;
+    }
+
+    .project-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #2b2d42;
+    }
+
+    .project-title a {
+      text-decoration: none;
+      color: #2b2d42;
+      transition: 0.2s;
+      display: inline-block;
+    }
+
+    .project-title a:hover {
+      color: #8170c4;
+      text-decoration: underline;
+    }
+
+    .project-desc {
+      color: #4e6272;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.75rem;
+      color: #9b8bc9;
+      font-weight: 500;
+    }
+
+    .project-meta i {
+      margin-right: 5px;
+    }
+
+    .repo-badge {
+      background: #f3efff;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5e4d9a;
+    }
+
+    /* about + contact */
+    .about-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .about-text {
+      flex: 2;
+    }
+
+    .info-card {
+      flex: 1;
+      background: #fbf9ff;
+      border-radius: 32px;
+      padding: 28px 24px;
+      border: 1px solid #ede5ff;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+    }
+
+    .contact-form {
+      flex: 1.5;
+    }
+
+    .contact-details {
+      flex: 1;
+      background: #fbf9ff;
+      border-radius: 32px;
+      padding: 24px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 32px;
+      border: 1px solid #e2daf0;
+      background: white;
+      font-family: 'Poppins', sans-serif;
+      transition: 0.2s;
+      margin-bottom: 16px;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #8170c4;
+      box-shadow: 0 0 0 3px rgba(129, 112, 196, 0.1);
+    }
+
+    button {
+      background: #8170c4;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #6955ae;
+    }
+
+    footer {
+      margin-top: 70px;
+      text-align: center;
+      padding: 24px 0;
+      border-top: 1px solid #eee7fe;
+      color: #6a7a88;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 780px) {
+      .navbar {
+        flex-direction: column;
+        align-items: stretch;
+        border-radius: 28px;
+      }
+      .nav-links {
+        justify-content: center;
+      }
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-content .btn-group {
+        justify-content: center;
+      }
+      .section-header {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.55s cubic-bezier(0.2, 0.9, 0.3, 1), transform 0.55s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Navigation -->
+  <div class="navbar">
+    <div class="logo-area">
+      <div class="logo-icon">IH</div>
+      <div class="logo-text">
+        <h4>Irza Hameed</h4>
+        <p>Design • Front-End • Creative</p>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">GitHub Repos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero -->
+  <div id="home" class="hero fade-up">
+    <div class="hero-content">
+      <span class="badge"><i class="fa-regular fa-star"></i> Available for work</span>
+      <h1>Hi, I'm <span class="highlight">Irza Hameed</span></h1>
+      <div class="hero-tagline">Graphic Designer & Front-End Developer</div>
+      <p class="hero-desc">I craft visual stories and interactive web experiences. I merge design thinking with clean code to build modern, responsive interfaces and brand identities.</p>
+      <div class="btn-group">
+        <a href="#contact" class="btn btn-primary"><i class="fa-regular fa-paper-plane"></i> Hire Me</a>
+        <!-- ✅ CV BUTTON: Opens Google Drive link (public) -->
+        <a href="https://drive.google.com/file/d/10tPJaXDlebSthyLn9BsPNPZYXPoxRY9R/view?usp=sharing" class="btn btn-outline" target="_blank"><i class="fa-regular fa-file-pdf"></i> Download CV</a>
+        <a href="https://github.com/irzahameed" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px;">
+        <span style="background:#f0ecfc; padding:6px 14px; border-radius:40px; font-size:0.75rem;">✨ 2+ years</span>
+        <span style="background:#f0ecfc; padding:6px 14px; border-radius:40px; font-size:0.75rem;">📍 Rawalpindi, PK</span>
+        <span style="background:#f0ecfc; padding:6px 14px; border-radius:40px; font-size:0.75rem;">💻 Remote friendly</span>
+      </div>
+    </div>
+    <div class="avatar-circle">
+      <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=400&h=400&q=80" alt="Irza Hameed">
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about" class="section fade-up">
+    <div class="section-header">
+      <h2>About me</h2>
+      <span class="section-sub">designer & developer blend</span>
+    </div>
+    <div class="about-wrap">
+      <div class="about-text">
+        <p style="margin-bottom: 20px;">I'm a Computer Science student and creative professional with a passion for bridging design and development. I believe that beautiful interfaces should also be intuitive and performant. I've worked on brand identities, UI layouts, and fully responsive websites — always focusing on user delight.</p>
+        <p>Currently exploring AI-driven interfaces and advanced frontend architectures. When I'm not coding, I design social media visuals, logos, or flyers. Let's bring your next digital project to life! ✨</p>
+      </div>
+      <div class="info-card">
+        <h3 style="margin-bottom: 10px; color:#8170c4">Core stack</h3>
+        <ul style="margin-left: 18px; color: #3f5563;">
+          <li>🎨 Graphic design (Photoshop, Illustrator, Canva, Figma)</li>
+          <li>💻 Frontend (HTML5, CSS3, JavaScript, WordPress)</li>
+          <li>📚 Programming (C, C++, Python, Java, PHP basics)</li>
+        </ul>
+        <hr style="margin: 18px 0; border-color:#e9e2fd;">
+        <p><i class="fa-regular fa-envelope"></i> irzahameed65@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section fade-up">
+    <div class="section-header">
+      <h2>Technical & Design Skills</h2>
+      <span class="section-sub">tools I master</span>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card"><strong>🎨 Graphic Design</strong> Photoshop, Illustrator, Canva, Figma</div>
+      <div class="skill-card"><strong>🌐 Front-End Dev</strong> HTML, CSS, JS, WordPress</div>
+      <div class="skill-card"><strong>⚙️ C / C++ / OOP</strong> Data structures, algorithms</div>
+      <div class="skill-card"><strong>☕ Java / Python</strong> Core programming & logic</div>
+      <div class="skill-card"><strong>🔧 PHP / SQL</strong> Backend basics, WordPress themes</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION: 6 GitHub repositories -->
+  <section id="projects" class="section fade-up">
+    <div class="section-header">
+      <h2>GitHub • Featured Repositories</h2>
+      <span class="section-sub">click on any project name → opens repository</span>
+    </div>
+    <div class="projects-grid" id="githubProjectsContainer"></div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section fade-up">
+    <div class="section-header">
+      <h2>Let's Connect</h2>
+      <span class="section-sub">I'll reply within 24h</span>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-form">
+        <form id="contactForm">
+          <input type="text" id="contactName" placeholder="Full name" required>
+          <input type="email" id="contactEmail" placeholder="Email address" required>
+          <input type="text" id="contactSubject" placeholder="Subject">
+          <textarea id="contactMsg" rows="4" placeholder="Tell me about your project..." required></textarea>
+          <button type="submit"><i class="fa-regular fa-paper-plane"></i> Send message</button>
+        </form>
+      </div>
+      <div class="contact-details">
+        <i class="fa-regular fa-message" style="font-size: 28px; color:#8170c4; margin-bottom: 12px; display: block;"></i>
+        <h3>Get in touch directly</h3>
+        <p style="margin: 12px 0 16px;"><i class="fa-regular fa-envelope"></i> irzahameed65@gmail.com</p>
+        <p><i class="fab fa-github"></i> <a href="https://github.com/irzahameed" target="_blank" style="color:#4f3f7a;">github.com/irzahameed</a></p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/irza-hameed/" target="_blank" style="color:#4f3f7a;">linkedin.com/in/irza-hameed</a></p>
+        <div style="margin-top: 24px; border-top: 1px solid #e8e0fc; padding-top: 16px;">
+          <span>📍 Rawalpindi, Pakistan</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Irza Hameed — Built with creativity & code. All projects linked to GitHub.</p>
+    <div style="margin-top: 8px;">
+      <!-- ✅ CV BUTTON in footer also uses Google Drive link -->
+      <a href="https://drive.google.com/file/d/10tPJaXDlebSthyLn9BsPNPZYXPoxRY9R/view?usp=sharing" target="_blank" style="color:#8170c4; text-decoration: none;">📄 CV (PDF)</a> &nbsp;|&nbsp;
+      <a href="https://github.com/irzahameed" target="_blank" style="color:#8170c4;">GitHub</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // 6 exact repositories from your GitHub account
+  const repos = [
+    {
+      name: "Parallel-Distributed-Computing",
+      description: "High-performance computing concepts and parallel algorithms implemented in C++ / OpenMP. Explores distributed systems and concurrency patterns.",
+      url: "https://github.com/irzahameed/Parallel-Distributed-Computing",
+      lang: "C++ / MPI"
+    },
+    {
+      name: "Artificial-intelligence-",
+      description: "AI concepts including search algorithms, knowledge representation, and basic ML models. Python-based implementations and logic agents.",
+      url: "https://github.com/irzahameed/Artificial-intelligence-",
+      lang: "Python"
+    },
+    {
+      name: "My_Portfolio",
+      description: "My personal portfolio website source – responsive design, interactive UI, and modern frontend techniques. Pure HTML/CSS/JS.",
+      url: "https://github.com/irzahameed/My_Portfolio",
+      lang: "HTML, CSS, JS"
+    },
+    {
+      name: "Data-Structures",
+      description: "Comprehensive C++ implementations of essential data structures: linked lists, trees, graphs, hash tables, and algorithmic analysis.",
+      url: "https://github.com/irzahameed/Data-Structures",
+      lang: "C++"
+    },
+    {
+      name: "Statistics-Probability",
+      description: "Statistical modeling and probability theory with R. Includes regression analysis, hypothesis testing, and data visualizations.",
+      url: "https://github.com/irzahameed/Statistics-Probability",
+      lang: "R"
+    },
+    {
+      name: "Programming-Fundamentals",
+      description: "Foundational programming concepts in C: loops, functions, arrays, pointers, and problem-solving patterns. Great for beginners.",
+      url: "https://github.com/irzahameed/Programming-Fundamentals",
+      lang: "C"
+    }
+  ];
+
+  // Render projects
+  function renderProjects() {
+    const container = document.getElementById('githubProjectsContainer');
+    if (!container) return;
+    container.innerHTML = '';
+    repos.forEach(repo => {
+      const card = document.createElement('div');
+      card.className = 'project-card';
+      card.innerHTML = `
+        <div class="project-content">
+          <div class="project-title">
+            <a href="${repo.url}" target="_blank" rel="noopener noreferrer">${repo.name}</a>
+          </div>
+          <div class="project-desc">${repo.description}</div>
+          <div class="project-meta">
+            <span class="repo-badge"><i class="fab fa-github"></i> ${repo.lang || 'Repository'}</span>
+            <span><i class="fa-regular fa-star"></i> public repo</span>
+            <span><i class="fa-regular fa-folder-open"></i> irzahameed</span>
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  // Intersection Observer for fade-up
+  const fadeElements = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  fadeElements.forEach(el => observer.observe(el));
+
+  // Contact form handler
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const subject = document.getElementById('contactSubject').value.trim() || "Portfolio inquiry";
+      const message = document.getElementById('contactMsg').value.trim();
+      if (!name || !email || !message) {
+        alert('Please fill in name, email and message.');
+        return;
+      }
+      const mailtoLink = `mailto:irzahameed65@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+      window.location.href = mailtoLink;
+      alert(`Thank you ${name}! Your email client will open to send the message.`);
+    });
+  }
+
+  // Initialize projects
+  renderProjects();
+  console.log("Portfolio ready — CV button links to Google Drive. All 6 repos linked to GitHub.");
+</script>
+</body>
+</html>
